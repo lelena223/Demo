@@ -41,6 +41,4 @@ jobs:
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/be_db_dl:latest
             docker stop backend_app || true
             docker rm backend_app || true
-            docker run -d -p 3030:3000 --name backend_app \
-              --env-file /home/${{ secrets.USERNAME }}/.env_backend \
-              ${{ secrets.DOCKERHUB_USERNAME }}/be_db_dl:latest
+            docker run -d -p 3030:3000 --name backend_app ${{ secrets.DOCKERHUB_USERNAME }}/be_db_dl:latest
