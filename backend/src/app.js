@@ -16,7 +16,7 @@ const pool = mysql.createPool({
   queueLimit: 0,
 });
 
-app.get("/api/health", (req, res) => res.json({ ok: true }));
+app.get("/api/health", (req, res) => res.json({ ok: true, version: "1.0.0" }));
 
 app.get("/api/users", async (req, res, next) => {
   try {
